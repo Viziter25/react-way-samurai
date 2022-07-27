@@ -5,7 +5,7 @@ const MainImg = () => {
     <div>
       <img
         className="mainImage"
-        src="https://klike.net/uploads/posts/2019-05/1556708032_1.jpg"
+        src="http://wpkixx.com/html/pitnik/images/resources/profile-image.jpg"
         alt="img"
       ></img>
     </div>

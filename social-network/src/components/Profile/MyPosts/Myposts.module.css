@@ -2,6 +2,14 @@
   color: gold;
 }
 
-/* .block_text {
-  display: block;
-} */
+.posts {
+  margin-top: 10px;
+}
+
+.posts img{
+  width: 50px;
+}
+
+.postsBlock {
+  padding: 10px;
+}
