@@ -1,7 +1,7 @@
 .nav {
   grid-area: n;
   background-color: rgb(119, 201, 201);
-  padding: 20px;
+  padding: 15px;
 }
 
 .item {
@@ -12,4 +12,8 @@
 }
 .active{
   color: rgb(175, 187, 0);
+}
+
+.friendBlock {
+  padding-top: 50px;
 }

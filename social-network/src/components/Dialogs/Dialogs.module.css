@@ -9,17 +9,31 @@
 
 .dialogsItems .active {
   color: gold;
+  display: flex;
+  margin: 10px;
 }
 
 .dialog {
-
+  
 }
 
 
 .messageS {
-  padding: 10px;
+  margin: 25px;
+  border-radius: 7px;
+  background-color: salmon;
+  padding: 15px;
 }
 
 .message {
 
+}
+
+.NavLinkName {
+  margin: auto;
+}
+
+img {
+  border-radius: 30px;
+  width: 50px;
 }

@@ -3,18 +3,18 @@ import React from "react";
 
 const Button = (props) => {
   let newPostElement = React.createRef();
-  let addPost = () => {
+  let addMessage = () => {
     let text = newPostElement.current.value;
-    props.addPost(text);
+    props.addMessage(text);
   };
 
   return (
-    <div>
+    <div className={s.buttonBlock}>
       <div>
         <textarea ref={newPostElement} className={s.textarea}></textarea>
       </div>
       <div>
-        <button onClick={addPost} className={s.button}>
+        <button onClick={addMessage} className={s.button}>
           Send
         </button>
       </div>
