@@ -1,10 +1,11 @@
-import {rerenderEntireTree} from '../render'
+import { rerenderEntireTree } from "../render";
 let state = {
   profilePage: {
     posts: [
       { id: "1", message: "My first post", likecount: "20" },
       { id: "2", message: "My second post", likecount: "100" },
     ],
+    newPostText: "it-kamacura",
   },
   dialogsPage: {
     dialogs: [
@@ -50,6 +51,7 @@ let state = {
       { id: "2", message: "by" },
       { id: "3", message: "yoyo" },
     ],
+    newMessageText: "hi",
   },
   sidebar: {
     friend: [
@@ -75,25 +77,35 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
-    likecount: 0
+    message: state.profilePage.newPostText,
+    likecount: 0,
   };
-
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = "";
   rerenderEntireTree(state);
-}
-export let addMessage = (sendMessage) => {
+};
+
+export let addMessage = () => {
   let newMessage = {
     id: 4,
-    message: sendMessage,
+    message: state.dialogsPage.newMessageText,
   };
-
   state.dialogsPage.messages.push(newMessage);
+  state.dialogsPage.newMessageText = "";
   rerenderEntireTree(state);
-}
+};
 
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+};
+
+export let updateNewMessage = (newMessage) => {
+  state.dialogsPage.newMessageText = newMessage;
+  rerenderEntireTree(state);
+};
 
 export default state;

@@ -19,8 +19,9 @@ function App(props) {
             path="/profile"
             element={
               <Profile
-                state={props.state.profilePage.posts}
+                profilePage={props.state.profilePage}
                 addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />
             }
           />
@@ -28,8 +29,9 @@ function App(props) {
             path="/dialogs/*"
             element={
               <Dialogs
-                state={props.state.dialogsPage}
+                dialogsPage={props.state.dialogsPage}
                 addMessage={props.addMessage}
+                updateNewMessage={props.updateNewMessage}
               />
             }
           />

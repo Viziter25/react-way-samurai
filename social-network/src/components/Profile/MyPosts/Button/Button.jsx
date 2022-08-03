@@ -4,14 +4,18 @@ import React from "react";
 const Button = (props) => {
   let newPostElement = React.createRef();
   let addPost = () => {
-    let text = newPostElement.current.value;
-    props.addPost(text);
+    props.addPost();
   };
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  }
 
   return (
     <div>
       <div>
-        <textarea ref={newPostElement} className={s.textarea}></textarea>
+        <textarea onChange={onPostChange} ref={newPostElement} className={s.textarea} value={props.newPostText}/>
       </div>
       <div>
         <button onClick={addPost} className={s.button}>

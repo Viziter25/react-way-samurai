@@ -6,11 +6,11 @@ import Button from './ButtonMessage/Button';
 
 const Dialogs = (props) => {
 
-  let dialogsElements = props.state.dialogs.map((el) => (
+  let dialogsElements = props.dialogsPage.dialogs.map((el) => (
     <DialogsItem avatarka={el.avatarka} name={el.name} id={el.id} />
   ));
 
-  let messageElements = props.state.messages.map((el) => (
+  let messageElements = props.dialogsPage.messages.map((el) => (
     <MessageItem message={el.message} />
   ));
 
@@ -19,7 +19,11 @@ const Dialogs = (props) => {
       <div className={s.dialogsItems}>{dialogsElements}</div>
       <div className={s.messageS}>{messageElements}</div>
       <div>
-        <Button addMessage={props.addMessage} />
+        <Button
+          addMessage={props.addMessage}
+          newMessageText={props.dialogsPage.newMessageText}
+          updateNewMessage={props.updateNewMessage}
+        />
       </div>
     </div>
   );
