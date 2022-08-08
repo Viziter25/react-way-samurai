@@ -13,9 +13,8 @@ const Myposts = (props) => {
       <h3> My post</h3>
       <div>
         <Button
-          addPost={props.addPost}
+          dispatch={props.dispatch}
           newPostText={props.newPostText}
-          updateNewPostText={props.updateNewPostText}
         />
       </div>
       <div className={s.posts}>{postElements}</div>

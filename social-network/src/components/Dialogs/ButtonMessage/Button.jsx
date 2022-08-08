@@ -1,15 +1,17 @@
 import s from "./Button.module.css";
 import React from "react";
+import {addMessageActionCreator,onMessageChangeActionCreator} from '../../../redux/state.js'
 
 const Button = (props) => {
   let newPostElement = React.createRef();
+
   let addMessage = () => {
-    props.addMessage();
+    props.dispatch2(addMessageActionCreator());
   };
 
   let onMessageChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewMessage(text);
+    props.dispatch2(onMessageChangeActionCreator(text));
   };
 
   return (
