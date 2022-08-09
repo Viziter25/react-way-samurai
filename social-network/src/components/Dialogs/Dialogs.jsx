@@ -20,7 +20,7 @@ const Dialogs = (props) => {
       <div className={s.messageS}>{messageElements}</div>
       <div>
         <Button
-          dispatch2={props.dispatch2}
+          dispatch={props.dispatch}
           newMessageText={props.dialogsPage.newMessageText}
         />
       </div>

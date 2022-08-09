@@ -1,17 +1,17 @@
 import s from "./Button.module.css";
 import React from "react";
-import {addMessageActionCreator,onMessageChangeActionCreator} from '../../../redux/state.js'
+import {addMessageActionCreator,onMessageChangeActionCreator} from '../../../redux/dialogs-reducer'
 
 const Button = (props) => {
   let newPostElement = React.createRef();
 
   let addMessage = () => {
-    props.dispatch2(addMessageActionCreator());
+    props.dispatch(addMessageActionCreator());
   };
 
   let onMessageChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch2(onMessageChangeActionCreator(text));
+    props.dispatch(onMessageChangeActionCreator(text));
   };
 
   return (

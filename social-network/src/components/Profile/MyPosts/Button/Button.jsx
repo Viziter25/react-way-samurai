@@ -3,7 +3,7 @@ import React from "react";
 import {
   addPostActionCreator,
   updateNewPostTextActionCreator,
-} from "./../../../../redux/state.js";
+} from "./../../../../redux/profile-reducer";
 
 const Button = (props) => {
   let newPostElement = React.createRef();

@@ -1,7 +1,7 @@
-let ADD_POST = "ADD-POST";
-let UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-let ADD_MESSAGE = "ADD-MESSAGE";
-let UPDATE_NEW_MESSAGE = "UPDATE-NEW-MESSAGE";
+import profileReducer from "./profile-reducer";
+import sidebarReducer from "./sidebar-reducer";
+import dialogsReducer from "./dialogs-reducer";
+
 
 let store = {
   _state: {
@@ -93,47 +93,16 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likecount: 0,
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    }
-  },
-  dispatch2(action) {
-    if (action.type === ADD_MESSAGE) {
-      let newMessage = {
-        id: 4,
-        message: this._state.dialogsPage.newMessageText,
-      };
-      this._state.dialogsPage.messages.push(newMessage);
-      this._state.dialogsPage.newMessageText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE) {
-      this._state.dialogsPage.newMessageText = action.newMessage;
-      this._callSubscriber(this._state);
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+    this._callSubscriber(this._state);
   },
 };
 
-export const addPostActionCreator = () => ({ type: ADD_POST });
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text,
-  };
-};
 
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
-export const onMessageChangeActionCreator = (text) => {
-  return { type: UPDATE_NEW_MESSAGE, newMessage: text };
-};
+
+
 
 export default store;
