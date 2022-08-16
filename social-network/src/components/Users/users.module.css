@@ -1,0 +1,21 @@
+.userPhoto {
+  width: 150px;
+  border-radius: 40%;
+}
+
+.blockPages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selectedPageActive {
+  max-width: 200px;
+  color: gold;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.selectedPage {
+  cursor: pointer;
+  padding: 5px;
+}

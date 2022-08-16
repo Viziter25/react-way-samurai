@@ -4,7 +4,7 @@ import Friend from "../Friend/Friend";
 
 function Navbar(props) {
   let friendElements = props.item.friend.map((el) => (
-    <Friend avatarka={el.avatarka} name={el.name} id={el.id} />
+    <Friend avatarka={el.avatarka} name={el.name} key={el.id} />
   ));
 
   return (
@@ -39,6 +39,14 @@ function Navbar(props) {
           className={(navData) => (navData.isActive ? s.active : s.item)}
         >
           Music
+        </NavLink>
+      </div>
+      <div className={s.item}>
+        <NavLink
+          to="/users"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Friends
         </NavLink>
       </div>
       <div className={s.item}>

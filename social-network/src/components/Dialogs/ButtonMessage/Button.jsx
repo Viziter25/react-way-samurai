@@ -1,17 +1,16 @@
 import s from "./Button.module.css";
 import React from "react";
-import {addMessageActionCreator,onMessageChangeActionCreator} from '../../../redux/dialogs-reducer'
 
 const Button = (props) => {
   let newPostElement = React.createRef();
 
-  let addMessage = () => {
-    props.dispatch(addMessageActionCreator());
+  let onAddMessage = () => {
+    props.addMessage();
   };
 
   let onMessageChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(onMessageChangeActionCreator(text));
+    props.updateNewMessage(text);
   };
 
   return (
@@ -25,7 +24,7 @@ const Button = (props) => {
         ></textarea>
       </div>
       <div>
-        <button onClick={addMessage} className={s.button}>
+        <button onClick={onAddMessage} className={s.button}>
           Send
         </button>
       </div>
