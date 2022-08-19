@@ -1,9 +1,13 @@
 import s from './Ava.module.css'
+import Preloader from './../../../Common/Preloader/Preloadre'
 
-const Ava = () => {
+const Ava = (props) => {
+  if(!props.profile) {
+    return <Preloader />
+  }
   return (
     <div className={s.ava}>
-      <img src="https://www.vokrug.tv/pic/product/6/a/0/b/6a0bbf9e1e4b3c4564c562f91c6d43ec.jpeg" alt='img'></img>
+      <img src={props.profile.photos.large} alt="img"></img>
     </div>
   );
 };
