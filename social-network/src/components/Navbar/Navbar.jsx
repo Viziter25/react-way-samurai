@@ -57,6 +57,14 @@ function Navbar(props) {
           Settings
         </NavLink>
       </div>
+      <div className={s.item}>
+        <NavLink
+          to="/Login"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Login
+        </NavLink>
+      </div>
       <div className={s.friendBlock}>
         <h3>Friend</h3>
         <div>{friendElements}</div>
