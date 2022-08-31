@@ -19,3 +19,13 @@
   cursor: pointer;
   padding: 5px;
 }
+
+.blockUser {
+  flex-wrap: wrap;
+  display: flex;
+  max-width: 1000px;
+}
+
+.blockUserItem {
+  margin: 20px;
+}

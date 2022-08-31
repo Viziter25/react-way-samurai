@@ -1,5 +1,6 @@
 import s from "./Info.module.css";
 import Preloader from "./../../../Common/Preloader/Preloadre";
+import ProfileStatus from './ProfileStatus';
 
 const Info = (props) => {
   if (!props.profile) {
@@ -14,6 +15,7 @@ const Info = (props) => {
         <a href={props.profile.contacts.facebook}>
           {props.profile.contacts.facebook}
         </a>
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
       </div>
     );
 };
